@@ -1,8 +1,14 @@
+*{
+    padding: 0;
+    margin: 0;
+}
 main {
     display: flex;
     gap: 20px;
     flex-wrap: wrap;
     justify-content: center;
+    padding: 20px;
+    margin-right: 270px;
 }
 
 .cardProduto {
@@ -26,11 +32,14 @@ main {
     align-items: center;
     justify-content: center;
     gap: 10px;
+    position: relative;
 }
 
 .adicionarNoCarrinho img {
     width: 20px;
     height: 20px;
+    object-fit: cover;
+    object-position: center;
 }
 
 .produtoImagem {
@@ -67,4 +76,93 @@ h3 {
 .preco {
     color: brown;
     font-weight: bold;
+    height: 100%;
+}
+
+body{
+    display: flex;
+}
+.cartHolder{
+    min-width: 250px;
+    max-width: 250px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+    padding: 10px;
+    position: fixed;
+    right: 0px;
+    height: 100dvh;
+    background-color: white;
+}
+.cartBtn{
+    width: 50px;
+    height: 50px;
+    border: none;
+    border-radius: 50%;
+    padding: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.5);
+}
+.counter{
+    display: flex;
+    gap: 10px;
+    align-items: center;
+}
+.counter button{
+    width: 30px;
+    height: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: none;
+    border-radius: 5px;
+}
+
+.totalHolder{
+    display: flex;
+    gap: 10px;
+}
+.finish{
+    width: 100%;
+    padding: 10px;
+    border: none;
+}
+.cartInfo{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+.cart{
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+}
+.cardHolder{
+    height: calc(100% - 152px);
+    overflow-y: scroll;
+
+}
+.cardCart{
+    display: flex;
+    justify-content: space-between;
+}
+.cartHolder h1{
+    font-size: 25px;
+    margin-bottom: 30px;
+    font-family: "Montserrat", sans-serif;
+}
+body::-webkit-scrollbar{
+    display: none;
+}
+.cardHolder::-webkit-scrollbar{
+    appearance: none;
+    width: 10px;
+}
+
+.cardHolder::-webkit-scrollbar-thumb{
+    background-color: rgb(73, 73, 73);
+    border-radius: 10px;
 }
