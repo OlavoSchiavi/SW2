@@ -8,7 +8,6 @@ main {
     flex-wrap: wrap;
     justify-content: center;
     padding: 20px;
-    margin-right: 270px;
 }
 
 .cardProduto {
@@ -87,10 +86,11 @@ body{
     max-width: 250px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
     padding: 10px;
-    position: fixed;
+    height: 100%;
     right: 0px;
-    height: 100dvh;
+    position: fixed;
     background-color: white;
+    z-index: -1;
 }
 .cartBtn{
     width: 50px;
@@ -101,7 +101,7 @@ body{
     display: flex;
     align-items: center;
     justify-content: center;
-    position: absolute;
+    position: fixed;
     top: 20px;
     right: 20px;
     box-shadow: 0 0 5px rgba(0, 0, 0, 0.5);
@@ -143,16 +143,17 @@ body{
 .cardHolder{
     height: calc(100% - 152px);
     overflow-y: scroll;
-
 }
 .cardCart{
     display: flex;
     justify-content: space-between;
+    margin-top: 10px;
 }
 .cartHolder h1{
     font-size: 25px;
     margin-bottom: 30px;
     font-family: "Montserrat", sans-serif;
+    
 }
 body::-webkit-scrollbar{
     display: none;
@@ -165,4 +166,74 @@ body::-webkit-scrollbar{
 .cardHolder::-webkit-scrollbar-thumb{
     background-color: rgb(73, 73, 73);
     border-radius: 10px;
+}
+
+
+
+.sided{
+    padding-right: 290px;
+}
+.cartHolder{
+    display: none;
+}
+.hidden {
+    display:block;
+}
+
+#maincontent{
+    width: 100%;
+    
+}
+
+
+
+
+
+
+
+
+.carrossel {
+    position: relative;
+    width: 100%;
+    overflow: hidden;
+    background-color: aqua;
+    height: 400px;
+}
+
+.slides {
+    display: flex;
+    transition: transform 0.5s ease-in-out;
+    width: 100%;
+}
+
+.slide {
+    min-width: 100%;
+    box-sizing: border-box;
+}
+
+.slide img {
+    width: 100%;
+    display: block;
+    object-fit: cover;
+    object-position: center;
+}
+
+button.prev, button.next {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: rgba(0, 0, 0, 0.5);
+    color: white;
+    border: none;
+    padding: 10px;
+    cursor: pointer;
+    z-index: 10;
+}
+
+button.prev {
+    left: 10px;
+}
+
+button.next {
+    right: 10px;
 }
