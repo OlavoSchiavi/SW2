@@ -146,3 +146,112 @@ nextButton.addEventListener('click', () => {
     currentIndex = (currentIndex < slideItems.length - 1) ? currentIndex + 1 : 0;
     updateCarrossel();
 });
+
+// Funcionalidade FAQ
+document.addEventListener('DOMContentLoaded', function() {
+    const faqItems = document.querySelectorAll('.faq-item');
+    
+    faqItems.forEach(item => {
+        const question = item.querySelector('.faq-question');
+        
+        question.addEventListener('click', () => {
+            const isActive = item.classList.contains('active');
+            
+            // Fecha todos os outros itens
+            faqItems.forEach(otherItem => {
+                if (otherItem !== item) {
+                    otherItem.classList.remove('active');
+                }
+            });
+            
+            // Toggle do item atual
+            if (isActive) {
+                item.classList.remove('active');
+            } else {
+                item.classList.add('active');
+            }
+        });
+    });
+});
+
+// Funcionalidade SAC - Formulário de contato
+document.addEventListener('DOMContentLoaded', function() {
+    const contactForm = document.getElementById('contact-form');
+    
+    if (contactForm) {
+        contactForm.addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            // Validação dos campos obrigatórios
+            const nome = document.getElementById('nome').value.trim();
+            const email = document.getElementById('email').value.trim();
+            const assunto = document.getElementById('assunto').value;
+            const mensagem = document.getElementById('mensagem').value.trim();
+            
+            if (!nome || !email || !assunto || !mensagem) {
+                alert('Por favor, preencha todos os campos obrigatórios (*)');
+                return;
+            }
+            
+            // Validação básica de email
+            const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+            if (!emailRegex.test(email)) {
+                alert('Por favor, insira um email válido');
+                return;
+            }
+            
+            // Coleta dos dados do formulário
+            const formData = {
+                nome: nome,
+                email: email,
+                telefone: document.getElementById('telefone').value.trim(),
+                assunto: assunto,
+                numeroPedido: document.getElementById('numero-pedido').value.trim(),
+                mensagem: mensagem,
+                dataEnvio: new Date().toLocaleString('pt-BR')
+            };
+            
+            // Simula o envio do formulário
+            // Em um projeto real, aqui você enviaria os dados para um servidor
+            console.log('Dados do formulário:', formData);
+            
+            // Feedback para o usuário
+            alert('Mensagem enviada com sucesso! Entraremos em contato em breve.');
+            
+            // Limpa o formulário
+            contactForm.reset();
+        });
+    }
+});
+
+// Função para validar telefone (opcional)
+function validarTelefone(telefone) {
+    const telefoneRegex = /^[\(\)\s\-\+\d]+$/;
+    return telefoneRegex.test(telefone);
+}
+
+// Máscara para telefone (opcional)
+document.addEventListener('DOMContentLoaded', function() {
+    const telefoneInput = document.getElementById('telefone');
+    
+    if (telefoneInput) {
+        telefoneInput.addEventListener('input', function(e) {
+            let value = e.target.value.replace(/\D/g, '');
+            
+            if (value.length <= 11) {
+                if (value.length <= 2) {
+                    value = value.replace(/(\d{0,2})/, '($1');
+                } else if (value.length <= 6) {
+                    value = value.replace(/(\d{2})(\d{0,4})/, '($1) $2');
+                } else if (value.length <= 10) {
+                    value = value.replace(/(\d{2})(\d{4})(\d{0,4})/, '($1) $2-$3');
+                } else {
+                    value = value.replace(/(\d{2})(\d{5})(\d{0,4})/, '($1) $2-$3');
+                }
+            }
+            
+            e.target.value = value;
+        });
+    }
+});
+

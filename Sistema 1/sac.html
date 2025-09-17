@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap"
+        rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Nunito:ital,wght@0,200..1000;1,200..1000&display=swap"
+        rel="stylesheet">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SAC - Atendimento ao Cliente</title>
+</head>
+
+<body>
+    <!-- Header com navegação -->
+    <header class="main-header">
+        <nav class="main-nav">
+            <div class="nav-container">
+                <div class="logo">
+                    <h2>Minha Loja</h2>
+                </div>
+                <div class="nav-links">
+                    <a href="index.html" class="nav-link">Loja</a>
+                    <a href="faq.html" class="nav-link">FAQ</a>
+                    <a href="sac.html" class="nav-link active">SAC</a>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Seção SAC -->
+    <section id="sac" class="sac-section">
+        <div class="container">
+            <h1>Atendimento ao Cliente (SAC)</h1>
+            <div class="sac-content">
+                <div class="sac-info">
+                    <h3>Entre em contato conosco</h3>
+                    <p>Estamos aqui para ajudar! Se você não encontrou a resposta para sua dúvida no <a href="faq.html">FAQ</a>, entre em contato através do formulário ao lado ou pelos canais abaixo:</p>
+                    
+                    <div class="contact-info">
+                        <div class="contact-item">
+                            <strong>📞 Telefone:</strong>
+                            <p>(11) 1234-5678</p>
+                        </div>
+                        <div class="contact-item">
+                            <strong>📧 Email:</strong>
+                            <p>atendimento@loja.com.br</p>
+                        </div>
+                        <div class="contact-item">
+                            <strong>🕒 Horário de atendimento:</strong>
+                            <p>Segunda a sexta: 8h às 18h<br>Sábados: 8h às 14h</p>
+                        </div>
+                        <div class="contact-item">
+                            <strong>💬 WhatsApp:</strong>
+                            <p>(11) 99999-9999</p>
+                        </div>
+                    </div>
+
+                    <div class="quick-links">
+                        <h4>Links úteis:</h4>
+                        <ul>
+                            <li><a href="faq.html">Perguntas Frequentes (FAQ)</a></li>
+                            <li><a href="index.html">Voltar à Loja</a></li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="sac-form">
+                    <h3>Formulário de Contato</h3>
+                    <form id="contact-form">
+                        <div class="form-group">
+                            <label for="nome">Nome completo *</label>
+                            <input type="text" id="nome" name="nome" required>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="email">Email *</label>
+                            <input type="email" id="email" name="email" required>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="telefone">Telefone</label>
+                            <input type="tel" id="telefone" name="telefone">
+                        </div>
+
+                        <div class="form-group">
+                            <label for="assunto">Assunto *</label>
+                            <select id="assunto" name="assunto" required>
+                                <option value="">Selecione um assunto</option>
+                                <option value="duvida-produto">Dúvida sobre produto</option>
+                                <option value="problema-pedido">Problema com pedido</option>
+                                <option value="troca-devolucao">Troca/Devolução</option>
+                                <option value="reclamacao">Reclamação</option>
+                                <option value="sugestao">Sugestão</option>
+                                <option value="elogio">Elogio</option>
+                                <option value="outros">Outros</option>
+                            </select>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="numero-pedido">Número do pedido (se aplicável)</label>
+                            <input type="text" id="numero-pedido" name="numero-pedido" placeholder="Ex: #12345">
+                        </div>
+
+                        <div class="form-group">
+                            <label for="mensagem">Mensagem *</label>
+                            <textarea id="mensagem" name="mensagem" rows="6" required placeholder="Descreva sua dúvida, problema ou sugestão com o máximo de detalhes possível..."></textarea>
+                        </div>
+
+                        <div class="form-group">
+                            <label class="checkbox-label">
+                                <input type="checkbox" id="aceito-termos" required>
+                                Aceito receber comunicações por email sobre o andamento da minha solicitação *
+                            </label>
+                        </div>
+
+                        <button type="submit" class="submit-btn">Enviar mensagem</button>
+                    </form>
+
+                    <div class="form-info">
+                        <p><strong>Tempo de resposta:</strong> Respondemos em até 24 horas em dias úteis.</p>
+                        <p><strong>Urgência:</strong> Para casos urgentes, ligue diretamente para (11) 1234-5678.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <script src="sac.js"></script>
+</body>
+
+</html>
+
