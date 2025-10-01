@@ -1,21 +1,32 @@
-main{
+main {
     display: flex;
     flex-wrap: wrap;
 }
-section{
+
+section {
     display: flex;
     flex-direction: column;
     width: 250px;
+    border-radius: 10px;
+    overflow: hidden;
+    transition: ease-in-out .1s;
 }
-section img{
+
+section img {
     height: 150px;
+    object-fit: cover;
+    object-position: center;
+    width: 100%;
+    max-height: 150px;
 }
-section div{
+
+section div {
     display: flex;
     gap: 10px;
     padding: 5px;
 }
-section div button{
+
+section div button {
     height: 40px;
     width: 40px;
     display: flex;
@@ -26,10 +37,51 @@ section div button{
     border: 2px solid black;
     transition: ease-in-out .1s;
 }
-section div button:hover{
-    background-color: rgb(216, 216, 216);
+
+section div button:hover {
+    background-color: rgb(244, 242, 242);
 }
-section div button img{
+
+section div button img {
     width: 30px;
     height: 30px;
+}
+section:hover{
+    translate: 0 -2px;
+    box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.5);
+}
+
+.toolBar {
+    display: flex;
+    flex-direction: column;
+}
+
+.msg {
+    display: flex;
+    height: fit-content;
+    align-items: center;
+    border: 2px solid black;
+    border-radius: 5px;
+    padding: 5px;
+    gap: 5px;
+}
+
+.msg img {
+    height: 40px;
+    width: 40px;
+}
+
+.mensagemHolder {
+    display: flex;
+    flex-direction: column;
+    max-height: 80px;
+    overflow-y: auto;
+    gap: 5px;
+    padding: 5px;
+}
+.toolBar{
+    background-color: rgb(194, 198, 198);
+}
+.hidden{
+    display: none;
 }
